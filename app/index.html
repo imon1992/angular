@@ -1,75 +1,19 @@
-<!DOCTYPE html>
-<html ng-app="app">
-    <head>
-        <script src="./lib/angular/angular.min.js"></script>
-        <script src="main.js"></script>
-        
-    </head>
-    <body>
-        
-        <div ng-init="text='Hello world'">
-            {{ text }}
-        </div>
-
-        <div class="friends"ng-controller="SettingsController2 as settings">
-            <input type="text" ng-model="filtr"/>
-            <ul>
-                <li ng-repeat="findEl in settings.list | filter:filtr">
-                    {{ findEl }}
-                </li>
-            </ul>
-        </div>
-        <div >
-      <div>
-            <select ng-model="filterVal">
-                <option value="phone">phone</option>
-                <option value="age">age</option>
-            </select>
-          <table class="friends"ng-controller="SettingsController2 as settings">
-              <tr>
-                  <th>Name</th>
-                  <th>Phone Number</th>
-                  <th>Age</th>
-                </tr>
-                <tr ng-repeat="friend in settings.friends | orderBy:filterVal">
-                    <td>{{friend.name}}</td>
-                    <td>{{friend.phone}}</td>
-                    <td>{{friend.age}}</td>
-                </tr>
-            </table>
-        </div>
-            </div>
-
-            <div ng-controller="SettingsController1 as settings">
-                {{ name }}
-                {{ settings.name }}
-
-            </div>
-            <div ng-controller="SettingsController2 as settings"
-            >
-                <input type="text" ng-model="fname"/>
-                <button type="sybmit" ng-click="settings.addName(fname)"> add name</button>
-                <div>
-                    <div style="float: left; text-align: center">
-                        this
-                        <ul>
-                            <li ng-repeat="name in settings.names track by $index" >
-                                {{ name }}
-                                <button ng-click="settings.deleteName($index)">delteName</button>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div style="float: left; text-align: center">
-                        scope
-                        <ul>
-                            <li ng-repeat="name in names track by $index">
-                                    {{ name }}
-                                </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
- </body>
+<html>
+  <head>
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="main.js"></script>
+    <script src="config.js"></script>
     
+    <script src="services/people.js"></script>
+    <script src="components/people.js"></script>
+    <script src="components/person.js"></script>
+    
+  </head>
+  
+  <body ng-app="hellosolarsystem">
+    <a ui-sref="people" ui-sref-active="active">People</a>
+    
+    <ui-view></ui-view>
+  </body> 
 </html>
