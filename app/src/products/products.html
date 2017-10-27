@@ -1,0 +1,6 @@
+
+<div ng-repeat="item in getItems()" style="width: 32%;display:inline-block">
+        <p>{{item.name}}</p>
+        <p>{{item.desc}}</p>
+        <button ng-click="addToBag(item.id)">add</button>
+</div>

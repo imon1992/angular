@@ -1,21 +1,26 @@
-<html>
-  <head>
-    <script src="./lib/angular/angular.min.js"></script>
-    <script src="main.js"></script>
-  </head>
-  
-  <body ng-app="myApp">
+<!DOCTYPE html>
+<html >
+    <head>
+        <script src="./lib/angular/angular.min.js"></script>
+        <script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="app.js"></script>
+        <script src="app.service.js"></script>
+        <script src="src/cat/icon-basket.directive.js"></script>
+        <script src="src/products/products.controller.js"></script>
+        <script src="src/products/products.component.js"></script>
+        <script src="app.config.js"></script>
+        
+    </head>
+  <body ng-app="app">
+    <div>
+      <a ui-sref="products">Products</a>
+    </div>
+    <div style="float: right">
+      <icon-basket></icon-basket>
+    </div>
+    <!-- <a ui-sref="about" ui-sref-active="active">About</a> -->
 
-<style>.noValid{color:red}</style>
-<style>.valid{color:green}</style>
-    <form name="form" class="css-form" novalidate>
-      <div>
-        <label>
-        Username:
-        <input type="text" ng-model="name" name="name" username />{{name}}</label><br />
-        <span class="valid"ng-show="form.name.$pending.username">Checking if this name is available...</span>
-        <span class="noValid"ng-show="form.name.$error.username">This username is already taken!</span>
-      </div>
-    </form>
-  </body> 
+    <ui-view></ui-view>
+ </body>
+    
 </html>
