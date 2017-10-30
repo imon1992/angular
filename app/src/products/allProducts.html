@@ -1,0 +1,9 @@
+<!-- <li ng-repeat="val in product"><a ui-sref="singleProducts({id:val.id})">{{val.name}}</a></li> -->
+
+<div style="width:32%;display:inline-block;text-align:center"ng-repeat="val in product" ui-sref="singleProducts({id:val.id})">
+    <p>Book name:{{val.name}}</p>
+    <p>Book desc:{{val.desc}}</p>
+    <p>Book price:{{val.price}}</p>
+
+    <a ui-sref="singleProducts({id:val.id})">{{val.name}}</a>
+</div>

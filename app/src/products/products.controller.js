@@ -1,8 +1,6 @@
-function productController($scope,shopinGcart){
-    $scope.getItems = function(){
-        return shopinGcart.getItems();
-    }
-    $scope.addToBag = function(id){
-        return shopinGcart.addToBag(id);
-    }
+function productsController($scope,shopingCart,$stateParams){
+	$scope.getProducts = function(){
+		return shopingCart.getItems();
+	}
+
 }

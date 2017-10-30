@@ -1,1 +1,2 @@
-var myApp = angular.module('hellosolarsystem', ['ui.router']);
+angular.module('app',['ui.router']);
+
